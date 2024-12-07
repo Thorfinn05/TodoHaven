@@ -49,7 +49,7 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
               onClick={() => setFilter('active')}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'active'
-                  ? 'bg-primary-500 text-white'
+                  ? 'bg-red-500 text-white'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
@@ -59,7 +59,7 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
               onClick={() => setFilter('completed')}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'completed'
-                  ? 'bg-primary-500 text-white'
+                  ? 'bg-green-500 text-white'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
@@ -68,6 +68,57 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
           </div>
 
           <div className="flex flex-wrap gap-2">
+            {(['all'] as const).map((category) => (
+            <button
+                onClick={() => setCategoryFilter(category)}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  categoryFilter === category
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                All Categories
+              </button>
+            ))}
+            {(['work'] as const).map((category) => (
+            <button
+                onClick={() => setCategoryFilter(category)}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  categoryFilter === category
+                    ? 'bg-purple-900 text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                Work
+              </button>
+            ))}
+            {(['study'] as const).map((category) => (
+            <button
+                onClick={() => setCategoryFilter(category)}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  categoryFilter === category
+                    ? 'bg-blue-900 text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                Study
+              </button>
+            ))}
+            {(['personal'] as const).map((category) => (
+            <button
+                onClick={() => setCategoryFilter(category)}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  categoryFilter === category
+                    ? 'bg-pink-900 text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                Personal
+              </button>
+            ))}
+          </div>
+
+          {/* <div className="flex flex-wrap gap-2">
             {(['all', 'work', 'study', 'personal'] as const).map((category) => (
               <button
                 key={category}
@@ -81,7 +132,7 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
                 {category === 'all' ? 'All Categories' : category.charAt(0).toUpperCase() + category.slice(1)}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 

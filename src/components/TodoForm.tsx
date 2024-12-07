@@ -101,7 +101,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
 
       <button
         type="submit"
-        className="w-full bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl"
+        className="w-full bg-green-600 hover:bg-primary-600 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl"
       >
         <PlusCircle className="w-5 h-5" />
         Add Task
