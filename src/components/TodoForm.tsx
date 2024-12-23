@@ -47,12 +47,12 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-              <AlertCircle className="h-5 w-5 text-purple-500" />
+              <AlertCircle className="h-5 w-5 text-primary-500" />
             </div>
             <select
               value={priority}
               onChange={(e) => setPriority(e.target.value as Todo['priority'])}
-              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input"
+              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-400"
             >
               <option value="low">Low Priority</option>
               <option value="medium">Medium Priority</option>
@@ -67,7 +67,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as Todo['category'])}
-              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input"
+              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-400"
             >
               <option value="work">Work</option>
               <option value="study">Study</option>
@@ -83,7 +83,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
               type="datetime-local"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input"
+              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-400"
             />
           </div>
         </div>
