@@ -14,12 +14,6 @@ export function Navbar({ isOpen, activeFeature, onToggle, onFeatureSelect }: Nav
     <nav className="fixed w-full z-50 glass-card">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
-{/*           <div className="flex flex-row items-center cursor-pointer flex-shrink-0">
-          <span>
-              <LucideCalendarCheck2 className="text-primary-500 w-12 h-12 mr-3" />
-            </span>
-            <button onClick={() => handleNavClick('home')} className="hover:text-red-500 transition-colors text-3xl text-amber-300 font-serif font-bold">TodoHaven</button>
-          </div> */}
           <div className="flex items-center">
             <button
               onClick={onToggle}
