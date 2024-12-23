@@ -17,10 +17,15 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+        glass: {
+          light: 'rgba(255, 255, 255, 0.9)',
+          dark: 'rgba(17, 25, 40, 0.75)'
+        }
       },
       animation: {
         'slide-in': 'slide-in 0.2s ease-out',
         'fade-in': 'fade-in 0.2s ease-out',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         'slide-in': {
@@ -31,6 +36,9 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
