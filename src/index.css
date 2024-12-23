@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-input {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border-white/20 dark:border-white/10 focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50;
+  }
+
+  .premium-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:shadow-md;
+  }
+
+  .premium-button::after {
+    @apply content-[''] absolute inset-0 block bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-300 ease-out;
+  }
+
+  .nav-item {
+    @apply w-full flex items-center px-4 py-3 text-left transition-all duration-200 hover:bg-white/10 dark:hover:bg-white/5 rounded-lg;
+  }
+
+  .nav-item.active {
+    @apply bg-primary-500/10 text-primary-600 dark:text-primary-400;
+  }
+}
