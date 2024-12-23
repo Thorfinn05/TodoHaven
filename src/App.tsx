@@ -11,7 +11,7 @@ import { Navbar } from './components/navigation/Navbar';
 import { useTodos } from './hooks/useTodos';
 import { useTheme } from './hooks/useTheme';
 import { useNavigation } from './hooks/useNavigation';
-import { Home } from 'lucide-react';
+import { CalendarCheck, CalendarCheck2, CalendarCheck2Icon, Home, LucideCalendarCheck, LucideCalendarCheck2 } from 'lucide-react';
 
 function App() {
   const { todos, addTodo, toggleTodo, deleteTodo, updateTodo } = useTodos();
@@ -60,7 +60,7 @@ function App() {
       <div className="container mx-auto px-4 py-8 pt-20">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center mb-8">
-            <Home className="text-primary-500 w-12 h-12 mr-3" />
+            <LucideCalendarCheck2 className="text-primary-500 w-12 h-12 mr-3" />
             <div className="text-center">
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
                 TodoHaven
