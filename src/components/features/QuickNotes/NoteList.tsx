@@ -34,7 +34,7 @@ export function NoteList({ notes, onEdit, onDelete }: NoteListProps) {
             </div>
           </div>
 
-          <div className="prose dark:prose-invert max-w-none mb-4">
+          <div className="prose dark:prose-invert max-w-none mb-4 text-primary-500">
             {note.content}
           </div>
 
