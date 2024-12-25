@@ -30,13 +30,13 @@ export function GoalForm({ onSubmit }: GoalFormProps) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Goal Title"
-        className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700"
+        className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
       />
       <input
         type="date"
         value={targetDate}
         onChange={(e) => setTargetDate(e.target.value)}
-        className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700"
+        className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700 "
       />
       <input
         type="text"
