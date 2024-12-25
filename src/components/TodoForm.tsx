@@ -92,7 +92,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Add a description (optional)"
-          className="w-full px-4 py-3 rounded-xl glass-input"
+          className="w-full px-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
           rows={3}
         />
 
