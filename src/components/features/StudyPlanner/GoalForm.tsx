@@ -43,7 +43,7 @@ export function GoalForm({ onSubmit }: GoalFormProps) {
         value={subject}
         onChange={(e) => setSubject(e.target.value)}
         placeholder="Subject"
-        className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700"
+        className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
       />
       <button
         type="submit"
