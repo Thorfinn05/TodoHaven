@@ -34,14 +34,15 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="glass-card p-6 rounded-2xl shadow-xl animate-slide-in">
+    <form onSubmit={handleSubmit} className="glass-card p-6 rounded-2xl shadow-xl animate-slide-up">
       <div className="space-y-4">
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="What needs to be done?"
-          className="w-full px-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+          className="w-full px-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200"
+          required
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -52,7 +53,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
             <select
               value={priority}
               onChange={(e) => setPriority(e.target.value as Todo['priority'])}
-              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-400"
+              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200"
             >
               <option value="low">Low Priority</option>
               <option value="medium">Medium Priority</option>
@@ -67,7 +68,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as Todo['category'])}
-              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-400"
+              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200"
             >
               <option value="work">Work</option>
               <option value="study">Study</option>
@@ -83,7 +84,7 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
               type="datetime-local"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-400"
+              className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200"
             />
           </div>
         </div>
@@ -92,11 +93,14 @@ export function TodoForm({ onSubmit }: TodoFormProps) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Add a description (optional)"
-          className="w-full px-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+          className="w-full px-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200"
           rows={3}
         />
 
-        <button type="submit" className="w-full bg-green-600 hover:bg-primary-600 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl">
+        <button 
+          type="submit" 
+          className="w-full premium-button group"
+        >
           <PlusCircle className="inline-block w-5 h-5 mr-2 transition-transform group-hover:scale-110" />
           Add Task
         </button>

@@ -34,10 +34,10 @@ export function QuickNotes() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+      <div className="glass-card p-6 rounded-xl shadow-lg animate-slide-up">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-primary-500" />
+            <BookOpen className="w-6 h-6 text-primary-500 animate-glow" />
             Quick Notes
           </h2>
           <button
@@ -45,9 +45,9 @@ export function QuickNotes() {
               setEditingNote(null);
               setShowEditor(!showEditor);
             }}
-            className="flex items-center gap-2 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
+            className="premium-button group"
           >
-            <Plus className="w-5 h-5" />
+            <Plus className="w-5 h-5 transition-transform group-hover:scale-110" />
             New Note
           </button>
         </div>
@@ -58,25 +58,27 @@ export function QuickNotes() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search notes..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            className="w-full pl-10 pr-4 py-3 rounded-xl glass-input text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200"
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
         </div>
 
-        {showEditor ? (
-          <NoteEditor
-            initialTitle={editingNote?.title}
-            initialContent={editingNote?.content}
-            initialTags={editingNote?.tags}
-            onSave={handleSave}
-          />
-        ) : (
-          <NoteList
-            notes={filteredNotes}
-            onEdit={handleEdit}
-            onDelete={deleteNote}
-          />
-        )}
+        <div className="animate-scale-in">
+          {showEditor ? (
+            <NoteEditor
+              initialTitle={editingNote?.title}
+              initialContent={editingNote?.content}
+              initialTags={editingNote?.tags}
+              onSave={handleSave}
+            />
+          ) : (
+            <NoteList
+              notes={filteredNotes}
+              onEdit={handleEdit}
+              onDelete={deleteNote}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

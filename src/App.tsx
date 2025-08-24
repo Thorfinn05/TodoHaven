@@ -48,7 +48,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+    <div className="min-h-screen transition-all duration-500">
       <Navbar
         isOpen={isNavOpen}
         activeFeature={activeFeature}
@@ -58,20 +58,22 @@ function App() {
       <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       
       <div className="container mx-auto px-4 py-8 pt-20">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-center mb-8">
-            <LucideCalendarCheck2 className="text-primary-500 w-12 h-12 mr-3" />
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-center mb-8 animate-float">
+            <LucideCalendarCheck2 className="text-primary-500 w-12 h-12 mr-3 animate-glow" />
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
                 TodoHaven
               </h1>
-              <p className="text-gray-600 dark:text-gray-400 mt-2">
+              <p className="text-gray-600 dark:text-gray-400 mt-3 text-lg">
                 Your personal sanctuary for tasks and productivity
               </p>
             </div>
           </div>
           
-          {renderFeature()}
+          <div className="animate-slide-up">
+            {renderFeature()}
+          </div>
         </div>
       </div>
     </div>

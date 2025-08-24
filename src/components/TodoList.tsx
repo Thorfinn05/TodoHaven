@@ -27,7 +27,7 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+      <div className="glass-card p-4 rounded-xl shadow-lg animate-scale-in">
         <div className="flex items-center gap-2 mb-4">
           <ListFilter className="w-5 h-5 text-primary-500" />
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h2>
@@ -37,9 +37,9 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 ${
                 filter === 'all'
-                  ? 'bg-primary-500 text-white'
+                  ? 'bg-primary-500 text-white shadow-lg'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
@@ -47,9 +47,9 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
             </button>
             <button
               onClick={() => setFilter('active')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 ${
                 filter === 'active'
-                  ? 'bg-red-500 text-white'
+                  ? 'bg-orange-500 text-white shadow-lg'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
@@ -57,9 +57,9 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
             </button>
             <button
               onClick={() => setFilter('completed')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 ${
                 filter === 'completed'
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-green-500 text-white shadow-lg'
                   : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
@@ -68,71 +68,26 @@ export function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {(['all'] as const).map((category) => (
-            <button
-                onClick={() => setCategoryFilter(category)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  categoryFilter === category
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                }`}
-              >
-                All Categories
-              </button>
-            ))}
-            {(['work'] as const).map((category) => (
-            <button
-                onClick={() => setCategoryFilter(category)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  categoryFilter === category
-                    ? 'bg-purple-900 text-white'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                }`}
-              >
-                Work
-              </button>
-            ))}
-            {(['study'] as const).map((category) => (
-            <button
-                onClick={() => setCategoryFilter(category)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  categoryFilter === category
-                    ? 'bg-blue-900 text-white'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                }`}
-              >
-                Study
-              </button>
-            ))}
-            {(['personal'] as const).map((category) => (
-            <button
-                onClick={() => setCategoryFilter(category)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  categoryFilter === category
-                    ? 'bg-pink-900 text-white'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                }`}
-              >
-                Personal
-              </button>
-            ))}
-          </div>
-
-          {/* <div className="flex flex-wrap gap-2">
             {(['all', 'work', 'study', 'personal'] as const).map((category) => (
               <button
                 key={category}
                 onClick={() => setCategoryFilter(category)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 ${
                   categoryFilter === category
-                    ? 'bg-primary-500 text-white'
+                    ? category === 'all' 
+                      ? 'bg-primary-500 text-white shadow-lg'
+                      : category === 'work'
+                      ? 'bg-purple-500 text-white shadow-lg'
+                      : category === 'study'
+                      ? 'bg-blue-500 text-white shadow-lg'
+                      : 'bg-pink-500 text-white shadow-lg'
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
                 {category === 'all' ? 'All Categories' : category.charAt(0).toUpperCase() + category.slice(1)}
               </button>
             ))}
-          </div> */}
+          </div>
         </div>
       </div>
 
